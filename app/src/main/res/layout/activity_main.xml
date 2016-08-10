@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dell.textapplication.MainActivity">
+    <ImageView
+        android:id="@+id/imageview1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:background="#E91E63" />
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="#5677fc" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:background="#C5CAE9"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:padding="5dp"
+        android:textColor="#ffffff"
+        android:text="缩小淡出"/>
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:background="#C5CAE9"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:layout_marginLeft="80dp"
+        android:padding="5dp"
+        android:textColor="#ffffff"
+        android:text="翻转"/>
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:background="#C5CAE9"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:layout_marginLeft="160dp"
+        android:padding="5dp"
+        android:textColor="#ffffff"
+        android:text="翻页"/>
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:background="#C5CAE9"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:layout_marginLeft="240dp"
+        android:padding="5dp"
+        android:textColor="#ffffff"
+        android:text="跳转"/>
+</RelativeLayout>
