@@ -1,8 +1,10 @@
 package com.example.dell.textapplication;
 
+import android.animation.Animator;
 import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +14,7 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends Activity {
 
     private TextView text;
     @Override
@@ -40,7 +42,7 @@ public class ResultActivity extends AppCompatActivity {
 
         });
     }
-    public void testKeyFrames(View v) {
+    public void testKeyFrames(final View v) {
         float h = v.getHeight();
         float w = v.getWidth();
         float x = v.getX();
@@ -54,13 +56,34 @@ public class ResultActivity extends AppCompatActivity {
 //                "rotation", kf0, kf1, kf2, kf3);
         PropertyValuesHolder pvhRotation = PropertyValuesHolder.ofFloat("rotation",0f,1080f,Animation.RELATIVE_TO_SELF,
                        0.5f, Animation.RELATIVE_TO_SELF,0.5f);
-        PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("x", x, -x);
-        PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("y", y, -y);
+        PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("x", x, -x+20);
+        PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("y", y, -y+20);
         PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX",1,0);
         PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY",1,0);
         ObjectAnimator anim = ObjectAnimator.ofPropertyValuesHolder(v,
                 pvhRotation, pvhX, pvhY,scaleX,scaleY);
         anim.setDuration(1500);
+        anim.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                v.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
         anim.start();
     }
 }
