@@ -56,8 +56,8 @@ public class ResultActivity extends Activity {
 //                "rotation", kf0, kf1, kf2, kf3);
         PropertyValuesHolder pvhRotation = PropertyValuesHolder.ofFloat("rotation",0f,1080f,Animation.RELATIVE_TO_SELF,
                        0.5f, Animation.RELATIVE_TO_SELF,0.5f);
-        PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("x", x, -x+20);
-        PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("y", y, -y+20);
+        PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("x", x, 30);
+        PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("y", y, 70);
         PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX",1,0);
         PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY",1,0);
         ObjectAnimator anim = ObjectAnimator.ofPropertyValuesHolder(v,

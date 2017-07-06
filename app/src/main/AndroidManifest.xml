@@ -9,13 +9,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".ResultActivity" />
+        <activity
+            android:name=".rxjav.RxJavaTestActivity"
+            android:label="@string/title_activity_rx_java_test"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ChooseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ResultActivity"></activity>
     </application>
 
 </manifest>

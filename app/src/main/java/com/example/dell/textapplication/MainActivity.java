@@ -39,23 +39,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.text1:
-//                ObjectAnimator anim = ObjectAnimator//
-//                        .ofFloat(img, "typ", 1.0F,  0.0F)//
-//                        .setDuration(500);//
-//                anim.start();
-//                anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
-//                {
-//                    @Override
-//                    public void onAnimationUpdate(ValueAnimator animation)
-//                    {
-//                        float cVal = (Float) animation.getAnimatedValue();
-//                        img.setAlpha(cVal);
-//                        img.setScaleX(cVal);
-//                        img.setScaleY(cVal);
-//                    }
-//
-//                });
+
+            ObjectAnimator anim = ObjectAnimator//
+                        .ofFloat(img, "typ", 1.0F,  0.0F)//
+                        .setDuration(500);//
+                anim.start();
+                anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
+                {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation)
+                    {
+                        float cVal = (Float) animation.getAnimatedValue();
+                        img.setAlpha(cVal);
+                        img.setScaleX(cVal);
+                        img.setScaleY(cVal);
+                    }
+
+                });
                 //缩小淡出
+                /*
                 AnimationSet animationSet = new AnimationSet(false);  //interpolator设置
                 Animation animation = new AlphaAnimation(1.0f,0.0f);
                 Animation animation1 = new ScaleAnimation(1.0f,0.0f,1.0f,0.0f);
@@ -63,8 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 animation1.setDuration(2000);
                 animationSet.addAnimation(animation);
                 animationSet.addAnimation(animation1);
-                img.setAnimation(animationSet);
-                img.startAnimation(animationSet);
+              //  img.setAnimation(animationSet);
+                img.startAnimation(animationSet);*/
                 break;
             case R.id.text2:
                 ObjectAnimator visToInvis1 = ObjectAnimator.ofFloat(img, "rotationX", 180f, 0f);
@@ -72,14 +74,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.text3:
                 ObjectAnimator visToInvis = ObjectAnimator.ofFloat(img, "rotationY", 0f, 90f);
-               final ObjectAnimator visFromInvis = ObjectAnimator.ofFloat(img1,"rotationY",-90f,0f);
+                final ObjectAnimator visFromInvis = ObjectAnimator.ofFloat(img1,"rotationY",-90f,0f);
                 visToInvis.addListener(new AnimatorListenerAdapter() {
                     public void onAnimationEnd(Animator anim) {
                         img.setVisibility(View.GONE);
                         visFromInvis.start();
                         img1.setVisibility(View.VISIBLE);
-                        //firstView.clearAnimation();
-                       // towView.clearAnimation();
                     }
                 });
                 visToInvis.start();
